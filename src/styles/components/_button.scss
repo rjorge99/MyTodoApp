@@ -1,0 +1,37 @@
+.btn {
+    padding: 15px 0;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    height: 54px;
+    cursor: pointer;
+
+    &--green {
+        background-color: #04c35c;
+
+        &:hover {
+            background-color: lighten(#04c35c, 5%);
+        }
+    }
+
+    &--blue {
+        background-color: #2d3748;
+
+        &:hover {
+            background-color: lighten(#2d3748, 5%);
+        }
+    }
+
+    &.btn-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__text {
+        margin-left: 10px;
+    }
+}

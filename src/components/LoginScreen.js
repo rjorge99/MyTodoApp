@@ -7,7 +7,7 @@ export const LoginScreen = () => {
                     <div className="container-login__section__inputs">
                         <p className="container-login__welcome">Welcome Back</p>
                         <h2 className="container-login__header">
-                            Login to you account
+                            Login to your account
                         </h2>
 
                         <p className="container-login__input-label">Email</p>
