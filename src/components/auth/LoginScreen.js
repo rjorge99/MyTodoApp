@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 export const LoginScreen = () => {
     return (
         <>
             <div className="container-login">
                 <div className="container-login__img"></div>
-                <div className="container-login__section">
+                <div className="container-login__section animate__animated animate__fadeIn">
                     <div className="container-login__section__inputs">
                         <p className="container-login__welcome">Welcome Back</p>
                         <h2 className="container-login__header">
@@ -37,11 +39,11 @@ export const LoginScreen = () => {
                         <span className="container-login__section__footer__span">
                             Dont have an account?
                         </span>
-                        <a
-                            href="#"
-                            className="container-login__section__footer__join">
+                        <Link
+                            className="container-login__section__footer__join"
+                            to="/register">
                             Join free today
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
