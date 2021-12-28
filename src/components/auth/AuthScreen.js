@@ -1,7 +1,13 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
-export const AuthScreen = () => {
+export const AuthScreen = ({ user }) => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user.login) navigate("/", { replace: true });
+    }, [user]);
+
     return (
         <div className="container-login">
             <div className="container-login__img"></div>

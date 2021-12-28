@@ -1,12 +1,14 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { UserContext } from "../../context";
+import { type } from "../../types/types";
 
 export const NavBar = () => {
-    const navigate = useNavigate();
+    const { dispatch } = useContext(UserContext);
 
     const handleLogout = () => {
-        navigate("/login", {
-            replace: true
+        localStorage.clear();
+        dispatch({
+            type: type.logOut
         });
     };
 
@@ -15,6 +17,7 @@ export const NavBar = () => {
             <button
                 className="btn btn--facebook btn-icon"
                 onClick={handleLogout}>
+                <i className="btn__fa fas fa-sign-out-alt fa-2x"></i>
                 <span className="btn__text">Logout</span>
             </button>
         </div>

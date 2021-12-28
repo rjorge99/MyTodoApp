@@ -42,7 +42,7 @@ export const RegisterScreen = () => {
                 </span>
                 <Link
                     className="container-login__section__footer__join"
-                    to="/login">
+                    to="/auth/login">
                     Login
                 </Link>
             </div>

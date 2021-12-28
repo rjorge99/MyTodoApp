@@ -1,6 +1,21 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../context";
+import { type } from "../../types/types";
 
 export const LoginScreen = () => {
+    const { dispatch } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        dispatch({
+            type: type.logIn,
+            payload: { name: "Jorge" }
+        });
+
+        navigate("/", { replace: true });
+    };
+
     return (
         <>
             <div className="container__auth animate__animated animate__fadeIn">
@@ -19,7 +34,11 @@ export const LoginScreen = () => {
                         placeholder="Password"
                     />
 
-                    <button className="btn btn--green mb-15">Login Now</button>
+                    <button
+                        className="btn btn--green mb-15"
+                        onClick={handleLogin}>
+                        Login Now
+                    </button>
                     <button className="btn btn--google btn-icon mb-15">
                         <img
                             className="btn__img"
@@ -42,7 +61,7 @@ export const LoginScreen = () => {
                 </span>
                 <Link
                     className="container-login__section__footer__join"
-                    to="/register">
+                    to="/auth/register">
                     Join free today
                 </Link>
             </div>
