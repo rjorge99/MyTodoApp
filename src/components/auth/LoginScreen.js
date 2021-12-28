@@ -28,7 +28,7 @@ export const LoginScreen = () => {
                         <button className="btn btn--green mb-15">
                             Login Now
                         </button>
-                        <button class="btn btn--google btn-icon mb-15">
+                        <button className="btn btn--google btn-icon mb-15">
                             <img
                                 className="btn__img"
                                 src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
@@ -37,7 +37,7 @@ export const LoginScreen = () => {
                                 Sign-in with google
                             </span>
                         </button>
-                        <button class="btn btn--facebook btn-icon">
+                        <button className="btn btn--facebook btn-icon">
                             <img
                                 className="btn__img"
                                 src="https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg"
