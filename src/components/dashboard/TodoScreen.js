@@ -1,3 +1,9 @@
+import { NavBar } from "../commons/NavBar";
+
 export const TodoScreen = () => {
-    return <div>TodoScreen</div>;
+    return (
+        <>
+            <NavBar />
+        </>
+    );
 };

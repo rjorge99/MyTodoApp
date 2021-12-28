@@ -1,12 +1,11 @@
 .btn {
-    padding: 15px 0;
+    padding: 15px 10px;
     outline: none;
     border: none;
     color: #fff;
     font-weight: bold;
     border-radius: 5px;
     font-family: "Roboto", sans-serif;
-    height: 54px;
     cursor: pointer;
 
     &--green {
@@ -17,7 +16,7 @@
         }
     }
 
-    &--blue {
+    &--google {
         background-color: #2d3748;
 
         &:hover {
@@ -25,13 +24,25 @@
         }
     }
 
+    &--facebook {
+        background-color: #4267b2;
+
+        &:hover {
+            background-color: lighten(#4267b2, 5%);
+        }
+    }
+
     &.btn-icon {
         display: flex;
         align-items: center;
         justify-content: center;
+        // padding-top: 6px;
+        // padding-bottom: 6px;
     }
 
-    &__text {
-        margin-left: 10px;
+    &__img {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
     }
 }

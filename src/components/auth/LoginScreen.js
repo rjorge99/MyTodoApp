@@ -28,10 +28,22 @@ export const LoginScreen = () => {
                         <button className="btn btn--green mb-15">
                             Login Now
                         </button>
-                        <button class="btn btn--blue btn-icon">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                        <button class="btn btn--google btn-icon mb-15">
+                            <img
+                                className="btn__img"
+                                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                            />
                             <span className="btn__text">
-                                Or sign-in with google
+                                Sign-in with google
+                            </span>
+                        </button>
+                        <button class="btn btn--facebook btn-icon">
+                            <img
+                                className="btn__img"
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg"
+                            />
+                            <span className="btn__text">
+                                Sign-in with facebook
                             </span>
                         </button>
                     </div>
