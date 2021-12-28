@@ -1,4 +1,8 @@
 // LOGIN
+.container__auth {
+    width: 70%;
+    max-width: 420px;
+}
 .container-login {
     display: flex;
     height: 100vh;
@@ -22,8 +26,6 @@
         &__inputs {
             display: flex;
             flex-direction: column;
-            width: 70%;
-            max-width: 420px;
         }
 
         &__footer {
