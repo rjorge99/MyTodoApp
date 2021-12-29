@@ -1,18 +1,9 @@
-import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { UserContext } from "../../context";
-import { type } from "../../types/types";
 
 export const LoginScreen = () => {
-    const { dispatch } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        dispatch({
-            type: type.logIn,
-            payload: { name: "Jorge" }
-        });
-
         navigate("/", { replace: true });
     };
 

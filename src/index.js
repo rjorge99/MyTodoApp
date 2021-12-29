@@ -3,5 +3,12 @@ import ReactDOM from "react-dom";
 import { TodoListApp } from "./TodoListApp";
 
 import "./styles/styles.scss";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
-ReactDOM.render(<TodoListApp />, document.getElementById("root"));
+ReactDOM.render(
+    <Provider store={store}>
+        <TodoListApp />
+    </Provider>,
+    document.getElementById("root")
+);

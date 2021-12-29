@@ -1,16 +1,5 @@
-import React, { useContext } from "react";
-import { UserContext } from "../../context";
-import { type } from "../../types/types";
-
 export const NavBar = () => {
-    const { dispatch } = useContext(UserContext);
-
-    const handleLogout = () => {
-        localStorage.clear();
-        dispatch({
-            type: type.logOut
-        });
-    };
+    const handleLogout = () => {};
 
     return (
         <div className="navbar">
