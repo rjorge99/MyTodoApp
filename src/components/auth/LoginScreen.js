@@ -20,7 +20,7 @@ export const LoginScreen = () => {
                 "error"
             );
 
-        if (password.length == 0)
+        if (password.length === 0)
             return Swal.fire(
                 "Error",
                 "Favor de establecer el password",
@@ -71,6 +71,7 @@ export const LoginScreen = () => {
                         className="btn btn--google btn-icon mb-15"
                         onClick={handleGoogleLogin}>
                         <img
+                            alt=""
                             className="btn__img"
                             src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                         />

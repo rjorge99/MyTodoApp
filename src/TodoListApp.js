@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { login } from "./actions/auth";
 import { TodoScreen } from "./components/dashboard/TodoScreen";
+import { LoadingScreen } from "./components/ui/LoadingScreen";
 import { AuthRouter } from "./routes/AuthRouter";
 import { PrivateRoutes } from "./routes/PrivateRoutes";
 import { PublicRoutes } from "./routes/PublicRoutes";
 
 export const TodoListApp = () => {
+    const { loading } = useSelector((state) => state.ui);
     const dispatch = useDispatch();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -20,10 +22,11 @@ export const TodoListApp = () => {
                 setIsLoggedIn(true);
             } else setIsLoggedIn(false);
         });
-    }, []);
+    }, [dispatch]);
 
     return (
         <BrowserRouter>
+            {loading && <LoadingScreen />}
             <Routes>
                 <Route
                     path="/"

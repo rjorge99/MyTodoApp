@@ -9,6 +9,7 @@ import {
 import Swal from "sweetalert2";
 import { googleAuthProvider } from "../firebase/firebaseConfig";
 import { type } from "../types/types";
+import { loading, stopLoading } from "./ui";
 
 export const startGoogleLogin = () => {
     return async (dispatch) => {
@@ -20,15 +21,18 @@ export const startGoogleLogin = () => {
 
 export const firebaseAuthLogout = () => {
     return async (dispatch) => {
+        dispatch(loading());
         const auth = getAuth();
         await signOut(auth);
         dispatch(logout());
+        dispatch(stopLoading());
     };
 };
 
 export const startPasswordLogin = (email, password) => {
     return async (dispatch) => {
         const auth = getAuth();
+        dispatch(loading());
         signInWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
                 console.log("logged");
@@ -39,12 +43,16 @@ export const startPasswordLogin = (email, password) => {
                     "Favor de verificar el email o password",
                     "error"
                 );
+            })
+            .finally(() => {
+                dispatch(stopLoading());
             });
     };
 };
 
 export const registerWithEmailAndPassword = (email, password, username) => {
     return (dispatch) => {
+        dispatch(loading());
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
             .then(async ({ user }) => {
@@ -54,6 +62,9 @@ export const registerWithEmailAndPassword = (email, password, username) => {
             })
             .catch((err) => {
                 Swal.fire("Error", "El usuario ya existe", "error");
+            })
+            .finally(() => {
+                dispatch(stopLoading());
             });
     };
 };
