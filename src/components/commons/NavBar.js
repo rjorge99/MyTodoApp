@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { startGoogleLogout } from "../../actions/auth";
+import { firebaseAuthLogout } from "../../actions/auth";
 
 export const NavBar = () => {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
-        dispatch(startGoogleLogout());
+        dispatch(firebaseAuthLogout());
     };
 
     return (

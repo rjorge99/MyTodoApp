@@ -18,7 +18,7 @@ export const startGoogleLogin = () => {
     };
 };
 
-export const startGoogleLogout = () => {
+export const firebaseAuthLogout = () => {
     return async (dispatch) => {
         const auth = getAuth();
         await signOut(auth);
