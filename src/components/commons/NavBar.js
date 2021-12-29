@@ -1,5 +1,12 @@
+import { useDispatch } from "react-redux";
+import { startGoogleLogout } from "../../actions/auth";
+
 export const NavBar = () => {
-    const handleLogout = () => {};
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(startGoogleLogout());
+    };
 
     return (
         <div className="navbar">

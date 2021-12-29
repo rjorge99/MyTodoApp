@@ -1,10 +1,14 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { startGoogleLogin } from "../../actions/auth";
 
 export const LoginScreen = () => {
-    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleLogin = () => {
-        navigate("/", { replace: true });
+    const handlePasswordLogin = () => {};
+
+    const handleGoogleLogin = () => {
+        dispatch(startGoogleLogin());
     };
 
     return (
@@ -27,23 +31,25 @@ export const LoginScreen = () => {
 
                     <button
                         className="btn btn--green mb-15"
-                        onClick={handleLogin}>
+                        onClick={handlePasswordLogin}>
                         Login Now
                     </button>
-                    <button className="btn btn--google btn-icon mb-15">
+                    <button
+                        className="btn btn--google btn-icon mb-15"
+                        onClick={handleGoogleLogin}>
                         <img
                             className="btn__img"
                             src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                         />
                         <span className="btn__text">Sign-in with google</span>
                     </button>
-                    <button className="btn btn--facebook btn-icon">
+                    {/* <button className="btn btn--facebook btn-icon">
                         <img
                             className="btn__img"
                             src="https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg"
                         />
                         <span className="btn__text">Sign-in with facebook</span>
-                    </button>
+                    </button> */}
                 </div>
             </div>
             <div className="container-login__section__footer">
