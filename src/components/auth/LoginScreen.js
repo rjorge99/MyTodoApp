@@ -1,11 +1,34 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { startGoogleLogin } from "../../actions/auth";
+import { startGoogleLogin, startPasswordLogin } from "../../actions/auth";
+import { useForm } from "../../hooks/useForm";
+import validator from "validator";
+import Swal from "sweetalert2";
 
 export const LoginScreen = () => {
     const dispatch = useDispatch();
+    const [{ email, password }, handleInputChange] = useForm({
+        email: "jorge@hotmail.com",
+        password: "123456"
+    });
 
-    const handlePasswordLogin = () => {};
+    const handlePasswordLogin = () => {
+        if (!validator.isEmail(email))
+            return Swal.fire(
+                "Error",
+                "Favor de establecer un email válido",
+                "error"
+            );
+
+        if (password.length == 0)
+            return Swal.fire(
+                "Error",
+                "Favor de establecer el password",
+                "error"
+            );
+
+        dispatch(startPasswordLogin(email, password));
+    };
 
     const handleGoogleLogin = () => {
         dispatch(startGoogleLogin());
@@ -21,9 +44,19 @@ export const LoginScreen = () => {
                     </h2>
 
                     <p className="container-login__input-label">Email</p>
-                    <input className="input" type="text" placeholder="Email" />
+                    <input
+                        name="email"
+                        value={email}
+                        onChange={handleInputChange}
+                        className="input"
+                        type="text"
+                        placeholder="Email"
+                    />
                     <p className="container-login__input-label">Password</p>
                     <input
+                        name="password"
+                        value={password}
+                        onChange={handleInputChange}
                         className="input mb-30"
                         type="password"
                         placeholder="Password"

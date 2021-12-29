@@ -1,6 +1,42 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { registerWithEmailAndPassword } from "../../actions/auth";
+import { useForm } from "../../hooks/useForm";
+import validator from "validator";
 
 export const RegisterScreen = () => {
+    const dispatch = useDispatch();
+    const [{ username, email, password, password2 }, handleInputChange] =
+        useForm({
+            username: "jorge",
+            email: "jorge@hotmail.com",
+            password: "123456",
+            password2: "123456"
+        });
+
+    const handleCreateAccount = () => {
+        if (username.length == 0)
+            return Swal.fire(
+                "Error",
+                "Favor de establecer el nombre de usuario",
+                "error"
+            );
+        if (!validator.isEmail(email))
+            return Swal.fire(
+                "Error",
+                "Favor de establecer un email válido",
+                "error"
+            );
+        if (password !== password2)
+            return Swal.fire(
+                "Error",
+                "Los passwords no son similares",
+                "error"
+            );
+        dispatch(registerWithEmailAndPassword(email, password, username));
+    };
+
     return (
         <>
             <div className="container__auth animate__animated animate__fadeIn">
@@ -10,30 +46,46 @@ export const RegisterScreen = () => {
                     </h2>
                     <p className="container-login__input-label">Username</p>
                     <input
+                        value={username}
+                        name="username"
+                        onChange={handleInputChange}
                         className="input"
                         type="text"
                         placeholder="Username"
                     />
                     <p className="container-login__input-label">Email</p>
                     <input
+                        name="email"
+                        value={email}
+                        onChange={handleInputChange}
                         className="input"
                         type="text"
                         placeholder="sample@gmail.com"
                     />
                     <p className="container-login__input-label">Password</p>
                     <input
+                        name="password"
+                        value={password}
+                        onChange={handleInputChange}
                         className="input"
                         type="password"
                         placeholder="Password"
                     />
                     <p className="container-login__input-label">Password</p>
                     <input
+                        name="password2"
+                        value={password2}
+                        onChange={handleInputChange}
                         className="input mb-30"
                         type="password"
                         placeholder="Password"
                     />
 
-                    <button className="btn btn--green mb-15">Login</button>
+                    <button
+                        className="btn btn--green mb-15"
+                        onClick={handleCreateAccount}>
+                        Create account
+                    </button>
                 </div>
             </div>
             <div className="container-login__section__footer">
