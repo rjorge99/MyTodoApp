@@ -7,7 +7,10 @@ import {
     signInWithEmailAndPassword
 } from "firebase/auth";
 import Swal from "sweetalert2";
-import { googleAuthProvider } from "../firebase/firebaseConfig";
+import {
+    facebookAuthProvider,
+    googleAuthProvider
+} from "../firebase/firebaseConfig";
 import { type } from "../types/types";
 import { loading, stopLoading } from "./ui";
 
@@ -15,6 +18,15 @@ export const startGoogleLogin = () => {
     return async (dispatch) => {
         const auth = getAuth();
         const { user } = await signInWithPopup(auth, googleAuthProvider);
+        dispatch(login(user.uid, user.displayName));
+    };
+};
+
+export const startFacebookLogin = () => {
+    return async (dispatch) => {
+        const auth = getAuth();
+        const { user } = await signInWithPopup(auth, facebookAuthProvider);
+        console.log(user);
         dispatch(login(user.uid, user.displayName));
     };
 };

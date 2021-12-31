@@ -1,6 +1,10 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { startGoogleLogin, startPasswordLogin } from "../../actions/auth";
+import {
+    startFacebookLogin,
+    startGoogleLogin,
+    startPasswordLogin
+} from "../../actions/auth";
 import { useForm } from "../../hooks/useForm";
 import validator from "validator";
 import Swal from "sweetalert2";
@@ -32,6 +36,10 @@ export const LoginScreen = () => {
 
     const handleGoogleLogin = () => {
         dispatch(startGoogleLogin());
+    };
+
+    const handleFacebookLogin = () => {
+        dispatch(startFacebookLogin());
     };
 
     return (
@@ -77,13 +85,15 @@ export const LoginScreen = () => {
                         />
                         <span className="btn__text">Sign-in with google</span>
                     </button>
-                    {/* <button className="btn btn--facebook btn-icon">
+                    <button
+                        onClick={handleFacebookLogin}
+                        className="btn btn--facebook btn-icon mb-15">
                         <img
                             className="btn__img"
                             src="https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg"
                         />
                         <span className="btn__text">Sign-in with facebook</span>
-                    </button> */}
+                    </button>
                     <div className="container-login__section__footer">
                         <span className="container-login__section__footer__span">
                             Don't have an account?
