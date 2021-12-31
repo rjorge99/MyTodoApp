@@ -1,9 +1,21 @@
 .navbar {
-    background-color: red;
+    background-color: $navbar-color;
     position: fixed;
-    height: 50px;
     width: 100%;
     padding: 5px 10px;
+    top: 0;
+}
+
+.navbar__container {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+
+    &__logo {
+        flex: 1;
+
+        &__h2 {
+            font-family: "Sen", sans-serif;
+            color: #fff;
+        }
+    }
 }

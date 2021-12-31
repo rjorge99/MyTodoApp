@@ -1,3 +1,6 @@
+$navbar-color: #000;
+$background-color: #272626;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,4 +14,18 @@
 
 .mb-30 {
     margin-bottom: 30px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: lighten($background-color, 20);
 }

@@ -32,6 +32,14 @@
         }
     }
 
+    &--logout {
+        background-color: $background-color;
+
+        &:hover {
+            background-color: lighten($background-color, 10%);
+        }
+    }
+
     &.btn-icon {
         display: flex;
         align-items: center;
