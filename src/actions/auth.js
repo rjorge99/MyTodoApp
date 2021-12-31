@@ -26,7 +26,6 @@ export const startFacebookLogin = () => {
     return async (dispatch) => {
         const auth = getAuth();
         const { user } = await signInWithPopup(auth, facebookAuthProvider);
-        console.log(user);
         dispatch(login(user.uid, user.displayName));
     };
 };

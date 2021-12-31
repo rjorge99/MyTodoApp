@@ -40,7 +40,7 @@ export const TodoMain = () => {
                         onChange={handleInputChange}
                         className="dashboard-container__input__text"
                         type="text"
-                        autoComplete="false"
+                        autoComplete="off"
                         placeholder="What do you want to do?"
                     />
                     <button
