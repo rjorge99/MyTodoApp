@@ -6,10 +6,9 @@ export const TodoList = ({ todos }) => {
         <div className="todo-list-container">
             <ul className="todo-list">
                 {todos.map((todo) => (
-                    <TodoListItem todo={todo} />
+                    <TodoListItem key={todo.id} todo={todo} />
                 ))}
             </ul>
         </div>
     );
 };
- 

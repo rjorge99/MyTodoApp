@@ -90,6 +90,7 @@ export const LoginScreen = () => {
                         className="btn btn--facebook btn-icon mb-15">
                         <img
                             className="btn__img"
+                            alt=""
                             src="https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg"
                         />
                         <span className="btn__text">Sign-in with facebook</span>

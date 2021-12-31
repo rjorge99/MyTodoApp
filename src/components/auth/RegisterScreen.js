@@ -16,7 +16,7 @@ export const RegisterScreen = () => {
         });
 
     const handleCreateAccount = () => {
-        if (username.length == 0)
+        if (username.length === 0)
             return Swal.fire(
                 "Error",
                 "Favor de establecer el nombre de usuario",

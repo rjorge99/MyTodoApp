@@ -1,11 +1,10 @@
 import { useState } from "react";
 
-const initialState = {};
-export const useForm = (initialFormValues = initialState) => {
+export const useForm = (initialFormValues = {}) => {
     const [formValues, setFormValues] = useState(initialFormValues);
 
     const reset = () => {
-        setFormValues(initialState);
+        setFormValues(initialFormValues);
     };
 
     const handleInputChange = ({ target }) => {

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { login } from "./actions/auth";
+import { startLoadingTodos } from "./actions/todos";
 import { TodoScreen } from "./components/dashboard/TodoScreen";
 import { LoadingScreen } from "./components/ui/LoadingScreen";
 import { AuthRouter } from "./routes/AuthRouter";
@@ -20,6 +21,7 @@ export const TodoListApp = () => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName));
                 setIsLoggedIn(true);
+                dispatch(startLoadingTodos(user.uid));
             } else setIsLoggedIn(false);
         });
     }, [dispatch]);

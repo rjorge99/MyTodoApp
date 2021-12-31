@@ -29,3 +29,8 @@ $background-color: #272626;
     border-radius: 10px;
     background: lighten($background-color, 20);
 }
+
+button.fas {
+    background-color: transparent;
+    border: 0;
+}
