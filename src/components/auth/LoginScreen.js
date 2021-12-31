@@ -8,8 +8,8 @@ import Swal from "sweetalert2";
 export const LoginScreen = () => {
     const dispatch = useDispatch();
     const [{ email, password }, handleInputChange] = useForm({
-        email: "jorge@hotmail.com",
-        password: "123456"
+        email: "",
+        password: ""
     });
 
     const handlePasswordLogin = () => {

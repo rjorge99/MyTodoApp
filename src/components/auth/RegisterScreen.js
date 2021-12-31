@@ -9,10 +9,10 @@ export const RegisterScreen = () => {
     const dispatch = useDispatch();
     const [{ username, email, password, password2 }, handleInputChange] =
         useForm({
-            username: "jorge",
-            email: "jorge@hotmail.com",
-            password: "123456",
-            password2: "123456"
+            username: "",
+            email: "",
+            password: "",
+            password2: ""
         });
 
     const handleCreateAccount = () => {
