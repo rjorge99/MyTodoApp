@@ -11,9 +11,9 @@ import { PrivateRoutes } from "./routes/PrivateRoutes";
 import { PublicRoutes } from "./routes/PublicRoutes";
 
 export const TodoListApp = () => {
-    const { loading } = useSelector((state) => state.ui);
     const dispatch = useDispatch();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [checking, setChecking] = useState(true);
 
     useEffect(() => {
         const auth = getAuth();
@@ -22,13 +22,15 @@ export const TodoListApp = () => {
                 dispatch(login(user.uid, user.displayName));
                 setIsLoggedIn(true);
                 dispatch(startLoadingTodos(user.uid));
+                setChecking(false);
             } else setIsLoggedIn(false);
         });
     }, [dispatch]);
 
+    if (checking) return <LoadingScreen />;
+
     return (
         <BrowserRouter>
-            {loading && <LoadingScreen />}
             <Routes>
                 <Route
                     path="/"
