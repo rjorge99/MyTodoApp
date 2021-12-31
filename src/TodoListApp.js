@@ -32,7 +32,7 @@ export const TodoListApp = () => {
 
     return (
         <BrowserRouter>
-            <Routes>
+            <Routes basename={process.env.PUBLIC_URL}>
                 <Route
                     path="/"
                     element={
