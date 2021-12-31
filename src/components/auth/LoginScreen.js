@@ -8,6 +8,7 @@ import {
 import { useForm } from "../../hooks/useForm";
 import validator from "validator";
 import Swal from "sweetalert2";
+import { loading, stopLoading } from "../../actions/ui";
 
 export const LoginScreen = () => {
     const dispatch = useDispatch();
@@ -31,7 +32,9 @@ export const LoginScreen = () => {
                 "error"
             );
 
+        dispatch(loading());
         dispatch(startPasswordLogin(email, password));
+        dispatch(stopLoading());
     };
 
     const handleGoogleLogin = () => {
@@ -55,6 +58,7 @@ export const LoginScreen = () => {
                     <input
                         name="email"
                         value={email}
+                        autocomplete="off"
                         onChange={handleInputChange}
                         className="input"
                         type="text"

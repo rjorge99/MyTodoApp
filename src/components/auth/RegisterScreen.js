@@ -48,6 +48,7 @@ export const RegisterScreen = () => {
                     <input
                         value={username}
                         name="username"
+                        autocomplete="off"
                         onChange={handleInputChange}
                         className="input"
                         type="text"
@@ -57,6 +58,7 @@ export const RegisterScreen = () => {
                     <input
                         name="email"
                         value={email}
+                        autocomplete="off"
                         onChange={handleInputChange}
                         className="input"
                         type="text"
