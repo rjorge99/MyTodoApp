@@ -10,9 +10,9 @@ export const AuthRouter = () => {
         <Routes>
             <Route path="/auth" element={<AuthScreen />}>
                 <Route path="login" element={<LoginScreen />} />
-                <Route path="register" element={<RegisterScreen />} />
+                {/* <Route path="register" element={<RegisterScreen />} /> */}
             </Route>
-            <Route path="/politicas" element={<PrivacidadScreen />} />
+            {/* <Route path="/politicas" element={<PrivacidadScreen />} /> */}
         </Routes>
     );
 };

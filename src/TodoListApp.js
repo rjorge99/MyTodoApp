@@ -33,14 +33,14 @@ export const TodoListApp = () => {
     return (
         <BrowserRouter>
             <Routes basename={process.env.PUBLIC_URL}>
-                <Route
+                {/* <Route
                     path="/"
                     element={
                         <PrivateRoutes auth={isLoggedIn}>
                             <TodoScreen />
                         </PrivateRoutes>
                     }
-                />
+                /> */}
                 <Route
                     path="/*"
                     element={
