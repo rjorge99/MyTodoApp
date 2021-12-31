@@ -1,6 +1,89 @@
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "../commons/NavBar";
-import { TodoList } from "./TodoList";
+import { TodoMain } from "./TodoMain";
+
+const todos = [
+    {
+        id: 1,
+        text: "Todo 1",
+        done: true
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 2,
+        text: "Todo 2",
+        done: false
+    },
+    {
+        id: 3,
+        text: "Todo 3",
+        done: false
+    }
+];
 
 export const TodoScreen = ({ user }) => {
     const navigate = useNavigate();
@@ -8,7 +91,7 @@ export const TodoScreen = ({ user }) => {
     return (
         <>
             <NavBar />
-            <TodoList />
+            <TodoMain todos={todos} />
         </>
     );
 };
