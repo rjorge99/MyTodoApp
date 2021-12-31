@@ -23,7 +23,10 @@ export const TodoListApp = () => {
                 setIsLoggedIn(true);
                 dispatch(startLoadingTodos(user.uid));
                 setChecking(false);
-            } else setIsLoggedIn(false);
+            } else {
+                setChecking(false);
+                setIsLoggedIn(false);
+            }
         });
     }, [dispatch]);
 
