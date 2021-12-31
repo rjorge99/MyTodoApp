@@ -8,7 +8,8 @@ import { store } from "./store/store";
 
 ReactDOM.render(
     <Provider store={store}>
-        <TodoListApp />
+        centund
+        {/* <TodoListApp /> */}
     </Provider>,
     document.getElementById("root")
 );
