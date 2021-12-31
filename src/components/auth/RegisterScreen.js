@@ -86,17 +86,18 @@ export const RegisterScreen = () => {
                         onClick={handleCreateAccount}>
                         Create account
                     </button>
+
+                    <div className="container-login__section__footer">
+                        <span className="container-login__section__footer__span">
+                            Already have an account?
+                        </span>
+                        <Link
+                            className="container-login__section__footer__join"
+                            to="/auth/login">
+                            Login
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            <div className="container-login__section__footer">
-                <span className="container-login__section__footer__span">
-                    Already have an account?
-                </span>
-                <Link
-                    className="container-login__section__footer__join"
-                    to="/auth/login">
-                    Login
-                </Link>
             </div>
         </>
     );

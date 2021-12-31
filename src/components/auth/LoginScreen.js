@@ -84,17 +84,17 @@ export const LoginScreen = () => {
                         />
                         <span className="btn__text">Sign-in with facebook</span>
                     </button> */}
+                    <div className="container-login__section__footer">
+                        <span className="container-login__section__footer__span">
+                            Don't have an account?
+                        </span>
+                        <Link
+                            className="container-login__section__footer__join"
+                            to="/auth/register">
+                            Join free today
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            <div className="container-login__section__footer">
-                <span className="container-login__section__footer__span">
-                    Dont have an account?
-                </span>
-                <Link
-                    className="container-login__section__footer__join"
-                    to="/auth/register">
-                    Join free today
-                </Link>
             </div>
         </>
     );

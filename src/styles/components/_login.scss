@@ -29,8 +29,7 @@
         }
 
         &__footer {
-            position: absolute;
-            bottom: 1.2rem;
+            text-align: center;
 
             &__span {
                 color: #616161;
@@ -78,5 +77,27 @@
 
     .container-login__section {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container__auth {
+        width: 100%;
+    }
+}
+
+@media screen and (max-height: 620px) {
+    .container-login {
+        &__input-label {
+            margin: 5px 0;
+        }
+    }
+
+    .input {
+        padding: 10px 15px;
+    }
+
+    .mb-30 {
+        margin-bottom: 15px;
     }
 }
