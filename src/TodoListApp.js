@@ -30,6 +30,8 @@ export const TodoListApp = () => {
 
     if (checking) return <LoadingScreen />;
 
+    return <div>App</div>;
+
     return (
         <BrowserRouter>
             <Routes basename={process.env.PUBLIC_URL}>
