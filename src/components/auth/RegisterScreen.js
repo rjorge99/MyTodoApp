@@ -6,6 +6,7 @@ import { useForm } from "../../hooks/useForm";
 import validator from "validator";
 
 export const RegisterScreen = () => {
+    return <div>register</div>;
     const dispatch = useDispatch();
     const [{ username, email, password, password2 }, handleInputChange] =
         useForm({
