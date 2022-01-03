@@ -11,7 +11,6 @@ import Swal from "sweetalert2";
 import { loading, stopLoading } from "../../actions/ui";
 
 export const LoginScreen = () => {
-    return <div>Login</div>;
     const dispatch = useDispatch();
     const [{ email, password }, handleInputChange] = useForm({
         email: "",
