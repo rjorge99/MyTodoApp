@@ -11,24 +11,24 @@ import { PrivateRoutes } from "./routes/PrivateRoutes";
 import { PublicRoutes } from "./routes/PublicRoutes";
 
 export const TodoListApp = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [checking, setChecking] = useState(true);
+    // const [checking, setChecking] = useState(true);
 
-    useEffect(() => {
-        const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
-            if (user?.uid) {
-                dispatch(login(user.uid, user.displayName));
-                setIsLoggedIn(true);
-                dispatch(startLoadingTodos(user.uid));
-            } else setIsLoggedIn(false);
+    // useEffect(() => {
+    //     const auth = getAuth();
+    //     onAuthStateChanged(auth, (user) => {
+    //         if (user?.uid) {
+    //             dispatch(login(user.uid, user.displayName));
+    //             setIsLoggedIn(true);
+    //             dispatch(startLoadingTodos(user.uid));
+    //         } else setIsLoggedIn(false);
 
-            setChecking(false);
-        });
-    }, [dispatch]);
+    //         setChecking(false);
+    //     });
+    // }, [dispatch]);
 
-    if (checking) return <LoadingScreen />;
+    // if (checking) return <LoadingScreen />;
 
     return <div>App</div>;
 

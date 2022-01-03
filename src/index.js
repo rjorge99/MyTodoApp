@@ -7,8 +7,8 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 
 ReactDOM.render(
-    <Provider store={store}>
-        <TodoListApp />
-    </Provider>,
+    // <Provider store={store}>
+    <TodoListApp />,
+    // </Provider>,
     document.getElementById("root")
 );
