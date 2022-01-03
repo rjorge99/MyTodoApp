@@ -32,26 +32,26 @@ export const TodoListApp = () => {
 
     return <div>App</div>;
 
-    return (
-        <BrowserRouter>
-            <Routes basename={process.env.PUBLIC_URL}>
-                <Route
-                    path="/"
-                    element={
-                        <PrivateRoutes auth={isLoggedIn}>
-                            <TodoScreen />
-                        </PrivateRoutes>
-                    }
-                />
-                <Route
-                    path="/*"
-                    element={
-                        <PublicRoutes auth={isLoggedIn}>
-                            <AuthRouter />
-                        </PublicRoutes>
-                    }
-                />
-            </Routes>
-        </BrowserRouter>
-    );
+    // return (
+    //     <BrowserRouter>
+    //         <Routes basename={process.env.PUBLIC_URL}>
+    //             <Route
+    //                 path="/"
+    //                 element={
+    //                     <PrivateRoutes auth={isLoggedIn}>
+    //                         <TodoScreen />
+    //                     </PrivateRoutes>
+    //                 }
+    //             />
+    //             <Route
+    //                 path="/*"
+    //                 element={
+    //                     <PublicRoutes auth={isLoggedIn}>
+    //                         <AuthRouter />
+    //                     </PublicRoutes>
+    //                 }
+    //             />
+    //         </Routes>
+    //     </BrowserRouter>
+    // );
 };
