@@ -59,7 +59,7 @@ export const LoginScreen = () => {
                     <input
                         name="email"
                         value={email}
-                        autocomplete="off"
+                        autoComplete="off"
                         onChange={handleInputChange}
                         className="input"
                         type="text"
